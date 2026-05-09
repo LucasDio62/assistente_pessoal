@@ -1,0 +1,4 @@
+tapo
+SpeechRecognition
+gTTS
+requests

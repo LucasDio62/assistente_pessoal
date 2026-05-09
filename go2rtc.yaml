@@ -1,0 +1,7 @@
+streams:
+  camera_tapo:
+    - "rtsp://alnl22:Lucasdio12!@192.168.0.3:554/stream1"
+    - "tapo://liiceferr28@gmail.com:a31415926536A@192.168.0.3"
+
+log:
+  level: debug

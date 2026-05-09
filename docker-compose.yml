@@ -1,0 +1,26 @@
+services:
+  go2rtc:
+    image: alexxit/go2rtc:latest
+    container_name: go2rtc_server
+    ports:
+      - "1984:1984"
+      - "8554:8554"
+      - "8555:8555"
+    volumes:
+      - ./go2rtc.yaml:/config/go2rtc.yaml # Forçando o arquivo
+    networks:
+      - assistente_net
+
+  tapo_assistant:
+    build: .
+    container_name: tapo_assistant_app
+    depends_on:
+      - go2rtc
+    volumes:
+      - .:/app
+    networks:
+      - assistente_net
+
+networks:
+  assistente_net:
+    driver: bridge
